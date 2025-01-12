@@ -1,17 +1,21 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { Count } from "@src/components/Count";
 import { Todo } from './components/Todo';
+import { CounterStore } from '@src/Store/CountStore';
+import { Theme } from "@radix-ui/themes";
+import "@radix-ui/themes/styles.css";
+import { TimerView } from './components/TimeView';
 
-function reducer(state: { count: number }, action: { type: string }) {
-    if (action.type === "incremented_age") {
-        const countUpdate = state.count++;
-        state = { ...state, count: countUpdate }
-    }
+// function reducer(state: { count: number }, action: { type: string }) {
+//     if (action.type === "incremented_age") {
+//         const countUpdate = state.count++;
+//         state = { ...state, count: countUpdate }
+//     }
 
-    return state;
-}
+//     return state;
+// }
 
 const people = [{
     id: 0,
@@ -47,7 +51,8 @@ const people = [{
 
 
 export const Home = () => {
-    const [state, dispatch] = useReducer(reducer, { count: 0 });
+    // const [state, dispatch] = useReducer(reducer, { count: 0 });
+    const { count, increase } = CounterStore.getState();
 
     const chemists = people.filter(person =>
         person.profession === 'chemist'
@@ -68,7 +73,8 @@ export const Home = () => {
     );
 
     const onClick = () => {
-        dispatch({ type: 'incremented_age' });
+        // dispatch({ type: 'incremented_age' });
+        increase();
     }
 
     function getImageUrl(person: {
@@ -85,9 +91,9 @@ export const Home = () => {
         );
     }
 
-
     return (
-        <>
+        <Theme>
+            <TimerView />
             <Todo />
             <div>
                 <a href="https://vite.dev" target="_blank">
@@ -98,11 +104,11 @@ export const Home = () => {
                 </a>
             </div>
             <h1>Vite + React</h1>
-            <Count count={state.count} onClick={onClick} />
+            <Count count={count} onClick={onClick} />
             <p className="read-the-docs">
                 Click on the Vite and React logos to learn more
             </p>
             <ul>{listItems}</ul>
-        </>
+        </Theme>
     )
 }
