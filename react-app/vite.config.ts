@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import tsconfigPaths from 'vite-tsconfig-paths'
 import path from 'path';
 import crypto from 'crypto';
 
@@ -23,8 +22,12 @@ export default defineConfig({
       },
     },
   },
+  resolve: {
+    alias: {
+      '@src': path.resolve(__dirname, './src')
+    },
+  },
   plugins: [
     react(),
-    tsconfigPaths()
   ],
 })
