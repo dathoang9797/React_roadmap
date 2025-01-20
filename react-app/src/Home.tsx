@@ -5,8 +5,10 @@ import { Count } from "@src/components/Count";
 import { Todo } from './components/Todo';
 import { CounterStore } from '@src/Store/CountStore';
 import { Theme } from "@radix-ui/themes";
-import "@radix-ui/themes/styles.css";
+import { Flex, Text, Button } from "@radix-ui/themes";
 import { TimerView } from './components/TimeView';
+import "@radix-ui/themes/styles.css";
+
 
 // function reducer(state: { count: number }, action: { type: string }) {
 //     if (action.type === "incremented_age") {
@@ -92,7 +94,15 @@ export const Home = () => {
     }
 
     return (
-        <Theme>
+        <Theme
+            accentColor="crimson"
+            grayColor="sand" radius="large"
+            scaling="95%"
+        >
+            <Flex direction="column" gap="2">
+                <Text>Hello from Radix Themes :)</Text>
+                <Button>Let's go</Button>
+            </Flex>
             <TimerView />
             <Todo />
             <div>

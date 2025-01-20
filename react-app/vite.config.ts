@@ -4,6 +4,10 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 import path from 'path';
 import crypto from 'crypto';
 
+// Unit tests
+// Integration test
+// E2E tests
+
 // https://vite.dev/config/
 export default defineConfig({
   css: {
