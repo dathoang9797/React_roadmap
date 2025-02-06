@@ -7,6 +7,9 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './setupTests.ts',
+    coverage:{
+       reportsDirectory: './src/components'
+    }
   },
   resolve: {
     alias: {
