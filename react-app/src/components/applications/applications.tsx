@@ -1,5 +1,4 @@
 export const Application = () => {
-    // https://www.youtube.com/watch?v=_e0Jhf0lR2w&list=PLC3y8-rFHvwirqe1KHFCHJ0RqNuN61SJd&index=27
     return (
       <>
         <h1>Job application form</h1>
