@@ -1,13 +1,15 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Home } from './Home';
-import { About } from './About';
+// import { BrowserRouter, Route, Routes } from 'react-router-dom';
+// import { Home } from './Home';
+// import { About } from './About';
 import './App.css'
+import { Application } from './components/applications/applications';
 
 
 function App() {
   return (
     <>
-      <a
+      <Application />
+      {/* <a
         className="App-link"
         href="https://reactjs.org"
         target='_blank'
@@ -20,7 +22,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </>
   )
 }
