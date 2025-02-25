@@ -2,7 +2,6 @@ import { render, screen } from "@testing-library/react"
 import { test } from "vitest";
 import { Greet } from ".";
 
-//https://www.youtube.com/watch?v=W-dc5fpxUVs&list=PLC3y8-rFHvwirqe1KHFCHJ0RqNuN61SJd&index=14
 describe("Greet component", () => {
     test("Greet component renders correctly", () => {
         render(<Greet />);

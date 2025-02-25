@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { describe, expect, test } from "vitest";
 import { Application } from "./applications";
 // https://www.youtube.com/watch?v=_e0Jhf0lR2w&list=PLC3y8-rFHvwirqe1KHFCHJ0RqNuN61SJd&index=27
+
 describe("Application", () => {
     test("render correctly", () => {
         render(<Application />);
