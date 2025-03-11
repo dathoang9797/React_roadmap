@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { Skills } from "./skills";
 import { describe, test } from "vitest";
 
+https://www.youtube.com/watch?v=TyI8qAKswzo&list=PLC3y8-rFHvwirqe1KHFCHJ0RqNuN61SJd&index=32
 describe("Skills", () => {
     const skills = ['HTML', 'CSS', 'JavaScript'];
 
@@ -33,5 +34,17 @@ describe("Skills", () => {
         });
 
         expect(startLearningButton).not.toBeInTheDocument();
+    })
+
+    test("Start learning button is eventually displayed", async () => {
+        render(<Skills skills={skills} />)
+        const startLearningButton = await screen.findByRole("button",
+            {
+                name: "Start Learning",
+            },
+            {
+                timeout: 2000
+            });
+        expect(startLearningButton).toBeInTheDocument();
     })
 })
