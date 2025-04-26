@@ -2,13 +2,16 @@
 // import { Home } from './Home';
 // import { About } from './About';
 import './App.css'
-import { Application } from './components/applications/applications';
+// import { Application } from './components/applications/applications';
+// import { Count } from './components/Count';
+import { Counter } from './components/counter';
 
 
 function App() {
   return (
     <>
-      <Application />
+      <Counter />
+      {/* <Application /> */}
       {/* <a
         className="App-link"
         href="https://reactjs.org"

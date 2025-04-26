@@ -2,7 +2,6 @@ import { render, screen, logRoles } from "@testing-library/react";
 import { Skills } from "./skills";
 import { describe, test } from "vitest";
 
-// https://www.youtube.com/watch?v=mSWYQUXXF5Q&list=PLC3y8-rFHvwirqe1KHFCHJ0RqNuN61SJd&index=35
 describe("Skills", () => {
     const skills = ['HTML', 'CSS', 'JavaScript'];
 
