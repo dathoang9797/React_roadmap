@@ -1,8 +1,8 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, logRoles } from "@testing-library/react";
 import { Skills } from "./skills";
 import { describe, test } from "vitest";
 
-https://www.youtube.com/watch?v=TyI8qAKswzo&list=PLC3y8-rFHvwirqe1KHFCHJ0RqNuN61SJd&index=32
+// https://www.youtube.com/watch?v=mSWYQUXXF5Q&list=PLC3y8-rFHvwirqe1KHFCHJ0RqNuN61SJd&index=35
 describe("Skills", () => {
     const skills = ['HTML', 'CSS', 'JavaScript'];
 
@@ -37,7 +37,9 @@ describe("Skills", () => {
     })
 
     test("Start learning button is eventually displayed", async () => {
-        render(<Skills skills={skills} />)
+        const view = render(<Skills skills={skills} />);
+        logRoles(view.container);
+        // screen.debug();
         const startLearningButton = await screen.findByRole("button",
             {
                 name: "Start Learning",
@@ -45,6 +47,7 @@ describe("Skills", () => {
             {
                 timeout: 2000
             });
+        // screen.debug();
         expect(startLearningButton).toBeInTheDocument();
     })
 })
