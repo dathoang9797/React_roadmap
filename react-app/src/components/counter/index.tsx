@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 export const Counter = () => {
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState(0);
+    const [amount, setAmount] = useState(0);
 
     return (
         <div>
@@ -9,6 +10,13 @@ export const Counter = () => {
             <button onClick={() => setCount(count + 1)}>
                 Increment
             </button>
-        </div >
+            <input
+                type="number"
+                name='amount'
+                value={amount}
+                onChange={(e) => setAmount(Number(e.target.value))}
+            />
+            <button onClick={() => setCount(amount)}>Set</button>
+        </div>
     )
 }

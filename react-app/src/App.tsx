@@ -2,15 +2,22 @@
 // import { Home } from './Home';
 // import { About } from './About';
 import './App.css'
+import { MuiMode } from './components/mui';
+import { AppProviders } from './providers/AppProviders';
 // import { Application } from './components/applications/applications';
 // import { Count } from './components/Count';
-import { Counter } from './components/counter';
+// import { Counter } from './components/counter';
 
 
 function App() {
   return (
     <>
-      <Counter />
+      <AppProviders>
+        <div className='App'>
+          <MuiMode />
+        </div>
+      </AppProviders>
+      {/* <Counter /> */}
       {/* <Application /> */}
       {/* <a
         className="App-link"
