@@ -2,7 +2,9 @@
 // import { Home } from './Home';
 // import { About } from './About';
 import './App.css'
-import { MuiMode } from './components/mui';
+import './Storage';
+import GoogleTranslateCrashesTernaryRepro from './components/GoogleTranslate';
+// import { MuiMode } from './components/mui';
 import { AppProviders } from './providers/AppProviders';
 // import { Application } from './components/applications/applications';
 // import { Count } from './components/Count';
@@ -13,9 +15,10 @@ function App() {
   return (
     <>
       <AppProviders>
-        <div className='App'>
+        <GoogleTranslateCrashesTernaryRepro />
+        {/* <div className='App'>
           <MuiMode />
-        </div>
+        </div> */}
       </AppProviders>
       {/* <Counter /> */}
       {/* <Application /> */}
